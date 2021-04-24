@@ -10,8 +10,9 @@
   {#if showMenu || screenWidth > 768}
     <ul
       transition:fly={{
-        duration: 400,
+        duration: 300,
         y: -100,
+        delay: 0,
       }}
       class="links"
     >
@@ -42,10 +43,10 @@
     align-items: center;
     justify-content: center;
     color: var(--white);
-    z-index:1;
+    z-index: 1;
     background-color: transparent;
   }
-  
+
   #hamburger {
     display: unset;
     cursor: pointer;
@@ -69,7 +70,6 @@
     justify-content: space-around;
     padding: 0;
     width: 20rem;
-    z-index: 10;
   }
   .link {
     color: #f1e5e5;
@@ -101,7 +101,7 @@
   .link:last-child {
     background-color: var(--terciary);
   }
-  @media (min-width: 768px) {
+  @media (min-width: 769px) {
     #hamburger {
       display: none;
     }
@@ -117,9 +117,14 @@
     .links {
       display: flex;
       flex-direction: column;
-      margin-top: 11rem;
-      height: 10rem;
+      height: 20rem;
       text-align: center;
+      width: 100%;
+      -webkit-backdrop-filter: blur(5px);
+      backdrop-filter: blur(5px);
+      padding:6rem 5rem 0 5rem ;
+      justify-content:center;
+      box-sizing:  border-box;
     }
   }
 </style>
