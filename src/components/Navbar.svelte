@@ -60,7 +60,7 @@
     border-radius: 100%;
     padding: 0.5rem;
     box-shadow: 0px 0px 9px var(--secondary);
-    z-index: 1;
+    z-index: 2;
   }
   .links {
     list-style: none;

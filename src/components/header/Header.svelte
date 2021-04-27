@@ -2,12 +2,14 @@
   import Linke from "svelte-icons/fa/FaLinkedin.svelte";
   import Github from "svelte-icons/fa/FaGithub.svelte";
   import Hand from "svelte-icons/io/IoMdHand.svelte";
+  import Shapes from "./shapes.svelte";
+
   const src = "me.png";
   let height;
 </script>
 
-<svelte:window  bind:innerHeight={height} />
-<header style={`height: ${height}px;`} >
+<svelte:window bind:innerHeight={height} />
+<header style={`height: ${height}px;`}>
   <div class="circle--fly left" />
   <div class="circle circle--center">
     <img {src} alt="Foto de Erick Arita" />
@@ -30,6 +32,9 @@
     >
     <a target="__blank" href="https://github.com/erickArita"><Github /> </a>
   </div>
+  <Shapes />
+  <Shapes reverse={true} />
+   
 </header>
 
 <style>
@@ -40,7 +45,7 @@
     justify-content: center;
     align-items: center;
     position: relative;
-    width: 100vw;
+    width: 100%;
     overflow-x: hidden;
     top: 0;
     position: absolute;
@@ -66,6 +71,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+  }
+  .circle--fly {
+    width: 35rem;
+    height: 35rem;
   }
   img {
     height: 500px;
@@ -126,6 +135,7 @@
     backdrop-filter: blur(5px);
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     border-left: 1px solid rgba(255, 255, 255, 0.5);
+    z-index: 1;
   }
   .text__hand {
     font-size: 20px;
@@ -139,6 +149,7 @@
     width: 30px;
     height: 50px;
     bottom: 10%;
+    z-index: 1;
   }
   .social :first-child {
     height: max-content;
