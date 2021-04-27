@@ -3,8 +3,9 @@
   import Jobs from "../components/Jobs/Jobs.svelte";
 </script>
 
-<div style="height: 100vh;">
-  <Header />
+<div>
+  <div style="height: 100vh;">
+    <Header />
+  </div>
+  <Jobs />
 </div>
-
-<Jobs />
