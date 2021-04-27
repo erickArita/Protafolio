@@ -3,9 +3,11 @@
   import Navbar from "./Navbar.svelte";
 </script>
 
-<Navbar />
-<slot />
-<Footer />
+<div>
+  <Navbar />
+  <slot />
+  <Footer />
+</div>
 
 <style>
 </style>
