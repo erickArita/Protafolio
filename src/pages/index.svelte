@@ -1,6 +1,6 @@
 <script>
   import Header from "../components/header/Header.svelte";
-  import Jobs from "../components/Jobs/Jobs.svelte";
+  import Jobs from "../components/Jobs/Trabajos.svelte";
 </script>
 
 <div>
