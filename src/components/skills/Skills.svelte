@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Card from "../card.svelte";
+  import Card from "../Card.svelte";
   import JsIcon from "svelte-icons/fa/FaJs.svelte";
   import Node from "svelte-icons/fa/FaNodeJs.svelte";
   import Html from "svelte-icons/fa/FaHtml5.svelte";
@@ -18,7 +18,7 @@
   const skills = [
     {
       Icon: JsIcon,
-      text: "JavasCript",
+      text: "JavaScript",
       color: " #ffff00",
     },
     {
