@@ -5,9 +5,90 @@
   --secondary: #00c2f8;
   --terciary: #0abb9d;
   --white: #fbf9fb;
-  --black: #fbf9fb;
+  --black: #000000;
+  --grey: #f1e5e5;
 }
 body {
   padding: 0;
+}
+.circle,
+.circle--fly {
+  align-self: center;
+  width: 30rem;
+  height: 30rem;
+  background: radial-gradient(
+      ellipse at left,
+      hsla(193, 51%, 54%, 0.2),
+      transparent
+    ),
+    radial-gradient(ellipse at right, rgba(160, 28, 201, 0.2), transparent);
+  border-radius: 100%;
+  z-index: 0;
+}
+
+.circle {
+  clip-path: circle(50%);
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.circle--fly {
+  width: 35rem;
+  height: 35rem;
+}
+.circle--fly {
+  position: absolute;
+}
+.left {
+  left: -15rem;
+  top: -15rem;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(27, 178, 219, 0.449),
+    transparent 70%
+  );
+}
+.right {
+  right: -15rem;
+  bottom: -15rem;
+  background: radial-gradient(
+    ellipse at center,
+    hsla(293, 51%, 54%, 0.424),
+    transparent 70%
+  );
+}
+@media (max-width: 768px) {
+  
+  .circle {
+    width: 25rem;
+    height: 25rem;
+    margin-top: 3rem;
+    top: 10%;
+    margin-top: -20rem;
+  }
+  .circle--fly {
+    top: 0;
+    width: 25rem;
+    height: 100vh;
+    border-radius: 0%;
+    margin: 0;
+  }
+  .left {
+    left: -40%;
+    background: linear-gradient(
+      to right,
+      rgba(27, 178, 219, 0.424),
+      transparent 70%
+    );
+  }
+  .right {
+    background: linear-gradient(
+      to left,
+      hsla(293, 51%, 54%, 0.424),
+      transparent 70%
+    );
+    right: -40%;
+  }
  
 }

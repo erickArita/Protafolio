@@ -1,11 +1,9 @@
 <script>
   import Header from "../components/header/Header.svelte";
   import Jobs from "../components/Jobs/Trabajos.svelte";
+  import Skills from "../components/skills/Skills.svelte";
 </script>
 
-<div>
-  <div style="height: 100vh;">
-    <Header />
-  </div>
-  <Jobs />
-</div>
+<Header />
+<Skills />
+<Jobs />

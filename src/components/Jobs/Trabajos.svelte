@@ -1,4 +1,4 @@
-<section>
+<section id="jobs" class="jobs">
   hola
 </section>
 <style>

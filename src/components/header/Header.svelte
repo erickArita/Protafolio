@@ -9,7 +9,7 @@
 </script>
 
 <svelte:window bind:innerHeight={height} />
-<header style={`height: ${height}px;`}>
+<header id='header' style={`height: ${height}px;`}>
   <div class="circle--fly left" />
   <div class="circle circle--center">
     <img {src} alt="Foto de Erick Arita" />
@@ -47,35 +47,10 @@
     position: relative;
     width: 100%;
     overflow-x: hidden;
-    top: 0;
-    position: absolute;
     overflow-y: hidden;
+    z-index: 1;
   }
-  .circle,
-  .circle--fly {
-    align-self: center;
-    width: 30rem;
-    height: 30rem;
-    background: radial-gradient(
-        ellipse at left,
-        hsla(193, 51%, 54%, 0.2),
-        transparent
-      ),
-      radial-gradient(ellipse at right, rgba(160, 28, 201, 0.2), transparent);
-    border-radius: 100%;
-    z-index: 0;
-  }
-  .circle {
-    clip-path: circle(50%);
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  .circle--fly {
-    width: 35rem;
-    height: 35rem;
-  }
+  
   img {
     height: 500px;
     width: 500px;
@@ -97,28 +72,7 @@
     );
     z-index: 1;
   }
-  .circle--fly {
-    position: absolute;
-  }
-  .left {
-    left: -15rem;
-    top: -15rem;
-    background: radial-gradient(
-      ellipse at center,
-      rgba(27, 178, 219, 0.449),
-      transparent 70%
-    );
-  }
-  .right {
-    right: -15rem;
-    bottom: -15rem;
-    background: radial-gradient(
-      ellipse at center,
-      hsla(293, 51%, 54%, 0.424),
-      transparent 70%
-    );
-  }
-
+ 
   .text {
     position: absolute;
     line-height: 5px;

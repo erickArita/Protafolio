@@ -1,6 +1,7 @@
 <script>
   import Bars from "svelte-icons/fa/FaBars.svelte";
   import { fly } from "svelte/transition";
+  import { scrollto } from "svelte-scrollto";
   let showMenu = false;
   let screenWidth;
 </script>
@@ -17,10 +18,19 @@
       class="links"
     >
       <li class="link">
-        <p>Inicio</p>
+        <p use:scrollto={"#header"} on:click={() => (showMenu = false)}>
+          Inicio
+        </p>
       </li>
       <li class="link">
-        <p>Proyectos</p>
+        <p use:scrollto={"#skills"} on:click={() => (showMenu = false)}>
+          Skills
+        </p>
+      </li>
+      <li class="link">
+        <p use:scrollto={"#jobs"} on:click={() => (showMenu = false)}>
+          Proyectos
+        </p>
       </li>
       <li class="link">
         <p>Contacto</p>
@@ -28,22 +38,25 @@
     </ul>
   {/if}
 
-  <div id="hamburger" on:click={() => (showMenu = !showMenu)}>
+  <div id="hamburger" on:click={() => {(showMenu = !showMenu), window.navigator.vibrate(80)}}>
     <Bars />
   </div>
 </nav>
-<div id="showMenu" />
+{#if showMenu  }
+  <div id="showMenu" on:click={() => (showMenu = false)} />
+{/if}
 
 <style>
   nav {
-    position: sticky;
+    position: fixed;
+    width: 100%;
     top: 0;
     height: 100px;
     display: flex;
     align-items: center;
     justify-content: center;
     color: var(--white);
-    z-index: 1;
+    z-index: 2;
     background-color: transparent;
   }
 
@@ -105,15 +118,16 @@
     #hamburger {
       display: none;
     }
+  }
+  @media (max-width: 768px) {
     #showMenu {
       position: fixed;
       left: 0;
-      top: 17rem;
-      height: 100vh;
-      width: 100vw;
+      top: 220px;
+      height: 80vh;
+      width: 100%;
+      z-index: 2;
     }
-  }
-  @media (max-width: 768px) {
     .links {
       display: flex;
       flex-direction: column;
@@ -122,9 +136,9 @@
       width: 100%;
       -webkit-backdrop-filter: blur(5px);
       backdrop-filter: blur(5px);
-      padding:6rem 5rem 0 5rem ;
-      justify-content:center;
-      box-sizing:  border-box;
+      padding: 6rem 5rem 0 5rem;
+      justify-content: center;
+      box-sizing: border-box;
     }
   }
 </style>

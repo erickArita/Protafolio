@@ -27,8 +27,8 @@
 </script>
 
 <svelte:window
-  on:mousemove={moveShapes}
   bind:scrollY={topHeigth}
+  on:mousemove={moveShapes}
   on:scroll={onScroll}
 />
 <div
