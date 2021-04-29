@@ -5,8 +5,8 @@
   import Html from "svelte-icons/fa/FaHtml5.svelte";
   import Css from "svelte-icons/fa/FaCss3.svelte";
   import React from "svelte-icons/fa/FaReact.svelte";
+  import CircleBack from "../Circle/CircleBack.svelte";
   import Firebase from "svelte-icons/di/DiFirebase.svelte";
-  import Circle from "../Circle/circle.svelte";
   import { useObserver } from "../../hooks/useObserber";
 
   let inView: boolean = false;
@@ -65,7 +65,7 @@
   <h2 style="justify-self: flex-end;">
     <span>{"<"} </span> Skills <span>/></span>
   </h2>
-  <Circle circlesNum={6} />
+  <CircleBack circlesNum={6} />
 </section>
 
 <style>
